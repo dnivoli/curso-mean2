@@ -145,8 +145,7 @@ function getImageFile(req, res){
     var imageFile = req.params.imageFile;
     var path_file = './uploads/users/'+ imageFile;
 
-    
-    fs.access(path_file, (err) => {
+    fs.Stats(path_file, (err) => {
         console.log(err);
         if(!err){
             console.log(path_file);
